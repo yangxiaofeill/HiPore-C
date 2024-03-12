@@ -65,7 +65,7 @@ To generate the DpnII_GRCh38.vd.fragments.csv type:
 ```
 cooler digest -o hg38_DpnII_digetstion_fragment.bed hg38.chromosomes.size GCA_000001405.15_GRCh38_major_chr.fa DpnII
 echo "chrom,start,end,fragment_length,fragment_id" > DpnII_GRCh38.vd.fragments.csv  #DpnII_GRCh38.vd.fragments.csv with columns [chrom, start, end, fragment_length, fragment_id]
-awk -v OFS="," '{pirnt $1,$2,$3,$3-$2,NR}' hg38_DpnII_digetstion_fragment.bed >> DpnII_GRCh38.vd.fragments.csv
+awk -v OFS="," '{print $1,$2,$3,$3-$2,NR}' hg38_DpnII_digetstion_fragment.bed >> DpnII_GRCh38.vd.fragments.csv
 ``` 
 
 To run the pipeline type:
